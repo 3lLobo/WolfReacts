@@ -1,38 +1,74 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 60vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 1s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+nav {
+    padding: 20px 36px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-bottom: 16px;
+    /* height: 11vh; */
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 3px 3px #140c1a;
+    /* background: radial-gradient(closest-corner, #b166e0b4 10%, transparent 40%); */
+    font-variant-numeric: oldstyle-nums;
+    font-variant-caps: titling-caps;
+    font-family: Roboto;
+    font-weight: 300;
+    color: #61dafb;
+    position: center;
+    border-radius: 3vh;
+}
+
+nav > h1 {
+    font-variant-numeric: oldstyle-nums;
+    font-variant-caps: all-small-caps;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+.foot {
+    /* height: 5vh; */
+    /* text-shadow: 0px 3px 3px #bf6bff;; */
+    color: #61dafb;
+    /* padding-block-start: 1%; */
+    font-variant-numeric: oldstyle-nums;
+    font-variant-caps: all-small-caps;
+    font-family: Roboto;
+    font-weight: 300;
 }
