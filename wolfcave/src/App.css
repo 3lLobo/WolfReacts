@@ -72,3 +72,17 @@ nav > h1 {
     font-family: Roboto;
     font-weight: 300;
 }
+
+.goku > img {
+    width: auto;
+    height: 11vh;
+    border-radius: 5px;
+    object-fit: cover;
+    /* animation: App-logo-spin infinite 11s linear; */
+}
+
+.goku {
+    position: absolute;
+    right: 11px;
+    align-self: center;
+}
