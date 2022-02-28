@@ -3,6 +3,7 @@ import React from "react";
 import { ListItemIcon } from "@mui/material";
 
 export default function GokuBox(props) {
+    console.log(props)
     return (
         <div className="goku">
             {/* <ListItemIcon> */}

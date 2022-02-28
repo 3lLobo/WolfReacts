@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div className="foot">
             <h3> This is the Footer </h3>
-            <h4>It is {date} am/pm </h4>
+            <h4>It is {date} o'clock </h4>
         </div>
     );
 }
