@@ -1,12 +1,16 @@
 # My Reacts apps
 
-This app fills out as Wolf learns writing React.js Apps.
-
+This readme fills out as Wolf learns writing React.js Apps.
+These are mostly personal notes, in shape and size of brain farts intended for my future self. If you still want to read along, enjoy 😹
 Notes:
 
 1. Get started by creating a [node-js-app](https://create-react-app.dev/)
 2. [Pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) on your app
+3. [MaterialUI](https://mui.com/getting-started/installation/)
 
+```bash
+npx create-react-app my-app
+```
 
 ## JS
 
@@ -29,3 +33,4 @@ if a variable exists then insert whatever:
  const items = [0,1,2,3]
  {...items}
  ```
+ 
