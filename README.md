@@ -12,6 +12,15 @@ Notes:
 npx create-react-app my-app
 ```
 
+React state, rerenderes elements on change:
+```jsx
+[obj, setObj] = useState("Obj")
+
+<img src={obj} onClich={setObj(prevObj => prevObj + "change")}>
+```
+Don't change state of data or received props. Rather copy that data and change the copy.
+
+
 ## JS
 
 arrays have a `.map()` function. Use Map instead of for loops
