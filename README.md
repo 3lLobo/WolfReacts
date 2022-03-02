@@ -8,6 +8,7 @@ Notes:
 2. [Pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) on your app
 3. [MaterialUI](https://mui.com/getting-started/installation/) for styled elements
 4. [Formik](https://formik.org/docs/overview) and yup for simplifying forms 
+5. Import `.css` files into where they should be used. `Ap.css` into `App.jsx`. Sometimes components need to import their own `.css` files too
 
 ```bash
 npx create-react-app my-app
