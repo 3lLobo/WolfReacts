@@ -1,5 +1,12 @@
+
 .App {
     text-align: center;
+}
+
+.App--dark {
+    text-align: center;
+    background-color: rgb(43, 4, 66);
+    color: azure;
 }
 
 .App-logo {
@@ -116,4 +123,69 @@ main {
 
 .top {
     top: 0;
+}
+
+/* Toggle DarkMode */
+
+
+.toggler {
+    display: flex;
+    align-items: center;
+    /* position: absolute; */
+    margin-left: auto;
+}
+
+.toggler p {
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+.toggler--slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: right;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+
+.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+.dark .toggler--slider {
+    justify-content: flex-end;
 }

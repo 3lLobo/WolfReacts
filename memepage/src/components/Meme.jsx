@@ -1,14 +1,15 @@
 import { TextField, Stack, Button } from "@mui/material"
 import { EmojioneV4 } from 'react-emoji-render'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Formik } from "formik"
 import MemeData from "./MemeData"
 
 
 
-export default function Meme() {
+export default function Meme(props) {
 
     const [buttonText, setButtonText] = useState("Get your Meme :grin:")
+
     function handleClick() {
         setButtonText(function (oldText) {
             if (oldText === "Get your Meme :grin:") {
@@ -45,6 +46,12 @@ export default function Meme() {
     function handleSubmit() {
         return
     }
+
+    useEffect(() => {
+        return function () {
+
+        }
+    }, [])
 
     return (
         <main>
