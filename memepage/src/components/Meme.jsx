@@ -43,9 +43,6 @@ export default function Meme(props) {
         console.log(memeImg)
     }
 
-    function handleSubmit() {
-        return
-    }
 
     useEffect(() => {
         return function () {

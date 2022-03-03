@@ -8,6 +8,7 @@ Notes:
 2. [Pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) on your app
 3. [MaterialUI](https://mui.com/getting-started/installation/) for styled elements
 4. [Formik](https://formik.org/docs/overview) and yup for simplifying forms 
+5. Import `.css` files into where they should be used. `Ap.css` into `App.jsx`. Sometimes components need to import their own `.css` files too
 
 ```bash
 npx create-react-app my-app
@@ -17,18 +18,38 @@ React state, rerenderes elements on change:
 ```jsx
 [obj, setObj] = useState("Obj")
 
-<img src={obj} onClich={setObj(prevObj => prevObj + "change")}>
+<img src={obj} onClick={setObj(prevObj => prevObj + "change")}>
 ```
-Don't change state of data or received props. Rather copy that data and change the copy.
+Don't change state of data or received props. Rather copy that data and change the copy. If you need to change the original, create a `useState(data).
 
 Things React __**can't**__ handle:
  - local filesystem
  - API interactions
  - subscriptions/websockets
  - syncing internal states
-In these cases `useEffect()`. Retrun cleanup function to avoit memory leak
 
-Listen to events with 'window.addEventListener()`
+
+In these cases `useEffect()`. Retrun cleanup function to avoid memory leak. For local storage, this will clear the local storage once the page is closed:
+
+```jsx
+useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes))
+    return localStorage.removeItem("notes") });
+```
+
+Listen to events with `window.addEventListener()`. Function which are called `onClick={}` automatically get passed the `event` handle with all the atributes such as the text which is being typed into a textfield. If you want to pass on more parameters to the function use this trick:
+```html
+<onClick={(event) => props.function(event, param)}>
+``` 
+
+
+
+### Lazy initialization
+
+When using `useState(_initVal)` react will load the init value everytime it rerenders. To avoid this, lazy initialize by making it a function call:
+```js
+[state, setState] = useState(() => _initVal)
+```
 
 
 ## JS
@@ -65,4 +86,14 @@ async function apiCall() {
     const data = await res.json
     doSome(data)
 }
+```
+
+The dubble bars `||` mean or. If the first expression returns `undefined`, the expression after the double bars is used.
+```js
+const x = undefined || 11;
+```
+  
+Filter an array, return all the elements without matching id:
+```js
+const newArr = arr.filter(val => val.id !== id);
 ```
