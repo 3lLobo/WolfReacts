@@ -6,6 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
+  background: linear-gradient(-21deg, #511f6e, #f1dbff);
+  color: rgb(223, 255, 244);
 }
 
 button:focus {
@@ -118,7 +120,7 @@ button:focus {
 }
 
 .gutter.gutter-horizontal {
-  background: linear-gradient(21deg, #511f6e, #08020c);
+  background: linear-gradient(21deg, #511f6e, #f1dbff);
 }
 
 .gutter.gutter-horizontal:hover {
@@ -136,5 +138,5 @@ button:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background: linear-gradient(21deg, #511f6e, #08020c);
 }

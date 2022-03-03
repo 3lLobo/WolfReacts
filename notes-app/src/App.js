@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
@@ -6,14 +6,23 @@ import Split from "react-split";
 import { nanoid } from "nanoid";
 
 export default function App() {
-    const [notes, setNotes] = React.useState([]);
+    const [notes, setNotes] = React.useState(
+        () => JSON.parse(localStorage.getItem("notes")) || []
+    );
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     );
 
+    useEffect(() => {
+        localStorage.setItem("notes", JSON.stringify(notes))
+
+        // return localStorage.removeItem("notes")
+    }, [notes]);
+
     function createNewNote() {
         const newNote = {
             id: nanoid(),
+            title: "Note " + (notes.length + 1),
             body: "# Type your markdown note's title here",
         };
         setNotes((prevNotes) => [newNote, ...prevNotes]);
@@ -21,14 +30,20 @@ export default function App() {
     }
 
     function updateNote(text) {
-        setNotes((oldNotes) =>
-            oldNotes.map((oldNote) => {
-                return oldNote.id === currentNoteId
-                    ? { ...oldNote, body: text }
-                    : oldNote;
-            })
-        );
+        setNotes(oldNotes => {
+            const newArray = []
+            for(let i = 0; i < oldNotes.length; i++) {
+                const oldNote = oldNotes[i]
+                if(oldNote.id === currentNoteId) {
+                    newArray.unshift({ ...oldNote, body: text })
+                } else {
+                    newArray.push(oldNote)
+                }
+            }
+            return newArray
+        })
     }
+
 
     function findCurrentNote() {
         return (
@@ -51,6 +66,7 @@ export default function App() {
                         currentNote={findCurrentNote()}
                         setCurrentNoteId={setCurrentNoteId}
                         newNote={createNewNote}
+                        setNotes={setNotes}
                     />
                     {currentNoteId && notes.length > 0 && (
                         <Editor
