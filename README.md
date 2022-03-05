@@ -8,7 +8,12 @@ Notes:
 2. [Pseudo elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) on your app
 3. [MaterialUI](https://mui.com/getting-started/installation/) for styled elements
 4. [Formik](https://formik.org/docs/overview) and yup for simplifying forms 
+4. More styling: [Material-ui](https://www.npmjs.com/package/@material-ui/core)
 5. Import `.css` files into where they should be used. `Ap.css` into `App.jsx`. Sometimes components need to import their own `.css` files too
+6. With [Styled-components](https://styled-components.com/docs/basics) you can write the style inside the js file. Follow the second step too!
+6. Add this: `npm i --save-dev @types/styled-components`
+7. Time libraries: moment, TimeAgo
+8
 
 ```bash
 npx create-react-app my-app
